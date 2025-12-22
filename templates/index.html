@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Calculator</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .res { margin-top: 20px; font-size: 1.2rem; color: #333; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Math Solver</h2>
+        <form method="POST">
+            <input type="text" name="expression" placeholder="Enter math (e.g. 2+2)" value="{{ user_input }}">
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result is not none %}
+            <div class="res">Result: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
